@@ -17,7 +17,7 @@
         </div>
         <div class="col-md-12">
           <p>Current City:
-          <%= current_user.username %></p>
+          <%= current_user.city %></p>
         </div>
         <div class="col-md-4">
           <button type="button" class="btn btn-primary"><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></button>
@@ -25,6 +25,9 @@
         <div class="col-md-4">
           <button type="button" class="btn btn-success" ><%= link_to 'Edit Profile', edit_user_registration_path %></button>
         </div>
+        <%= link_to 'Options for my posts', user_post_path(current_user, @post) %>
+        <hr>
+
       </div>
       <div class="col-md-7" style="padding-left:10%">
         <div class="col-md-12">
@@ -32,6 +35,10 @@
         </div>
         <% current_user.posts.each do |post| %>
           <div class="col-md-12" style="padding-bottom:10px">
+
+            <p>
+              <%= link_to "#{post.title}", user_post_path(current_user, post) %>
+              <br>
             <p>
               <strong><%= post.city.name %></strong>
               <br>
