@@ -35,12 +35,33 @@ class PostsController < ApplicationController
 end
 
   def edit
+    @user = current_user
+    post_id = params[:id]
+    @post = Post.find_by(id: post_id)
   end
 
   def update
-  end
+    user = current_user
+    post_id = params[:id]
+    post = Post.find_by(id: post_id)
+
+   if post.update(post_params)
+     flash[:notice] = "Updated successfully."
+     redirect_to homes_index_path(user, post)
+   else
+     flash[:error] = post.errors.full_messages.join(", ")
+     redirect_to edit_user_post_path(user, post)
+   end
+ end
+
 
   def destroy
+    post_id = params[:id]
+    post = Post.find_by(id: post_id)
+    post.delete
+
+    user = current_user
+    redirect_to homes_index_path(user)
   end
 
 

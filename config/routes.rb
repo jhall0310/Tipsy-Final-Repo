@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/show'
+
   get 'posts/index'
 
   get 'posts/new'
@@ -22,12 +24,17 @@ Rails.application.routes.draw do
   get 'cities/update'
 
   get 'cities/destroy'
+  
 
   devise_for :users
   get 'homes/index'
   root to: 'homes#index'
 
   resources :cities do
+    resources :posts
+  end
+
+  resources :users do
     resources :posts
   end
 end
