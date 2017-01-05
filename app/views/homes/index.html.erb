@@ -1,26 +1,47 @@
-<h2><em>The only way to travel</em></h2>
-
 <p><% if current_user %>
-  Signed in as <br>
-  <%= image_tag current_user.avatar.url(:medium) %> <br>
-  <%= current_user.username %> <br>
-  Joined:
-  <%= current_user.created_at.strftime("%m/%d/%Y") %>
-  <% current_user.posts.each do |post| %>
-    <p>
-      <strong><%= post.city.name %></strong>
-      <%= post.text %>
-    </p>
-    <hr>
-  <% end %>
-<li>
-  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-  <br>
-  <%= link_to 'Edit Profile', edit_user_registration_path %>
-  <%= link_to 'Show Cities', cities_index_path %>
-</li>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="col-md-12">
+          <%= image_tag current_user.avatar.url(:medium) %>
+        </div>
+        <div class="col-md-12" style="padding-top:20px;">
+          <p>Username: <%= current_user.username %>
+        </div></p>
+        <div class="col-md-12">
+          <p>Joined: <%= current_user.created_at.strftime("%m/%d/%Y") %></p>
+        </div>
+        <div class="col-md-12">
+          <p>Current City:
+          <%= current_user.username %></p>
+        </div>
+        <div class="col-md-4">
+          <button type="button" class="btn btn-primary"><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></button>
+        </div>
+        <div class="col-md-4">
+          <button type="button" class="btn btn-success" ><%= link_to 'Edit Profile', edit_user_registration_path %></button>
+        </div>
+      </div>
+      <div class="col-md-7" style="padding-left:10%">
+        <div class="col-md-12">
+          <p>Posts:</p>
+        </div>
+        <% current_user.posts.each do |post| %>
+          <div class="col-md-12" style="padding-bottom:10px">
+            <p>
+              <strong><%= post.city.name %></strong>
+              <br>
+              <%= post.text %>
+            </p>
+          </div>
+        <% end %>
+        <div class="col-md-12">
+          <%= link_to 'Show Cities', cities_index_path %>
+        </div>
+      </div>
+    </div>
+  </div>
 <% else %>
-<%= link_to 'Login', '/login' %>
-
-<%= link_to 'Signup', '/signup' %>
+  <%= link_to 'Login', '/login' %>
+  <%= link_to 'Signup', '/signup' %>
 <% end %></p>
