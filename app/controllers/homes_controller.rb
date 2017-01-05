@@ -4,5 +4,6 @@ class HomesController < ApplicationController
     @user = User.all
     city_id = params[:city_id]
     @city = City.find_by(id: city_id)
+    @post = Post.all
   end
 end
