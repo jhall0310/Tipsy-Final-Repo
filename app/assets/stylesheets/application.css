@@ -14,3 +14,17 @@
  *= require_self
  *= require user
  */
+ .nav_image  {
+   height:400px;
+   width: auto;
+   background-image: url(http://i.imgur.com/AQhZ2bb.jpg);
+ }
+
+
+
+ .nav_image img {
+   height:400px;
+
+   background-repeat: no-repeat;
+   background-size:cover;
+ }

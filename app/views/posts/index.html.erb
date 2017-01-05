@@ -4,25 +4,38 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="intro">
-                  <h1>zThe Great city of  <%= @city.name %></h1>
-                    <hr>
+                    <div class="show_header">
+                        <h1>The Great city of
+                            <%= @city.name %></h1>
+                        <%= image_tag @city.image.url(:medium) %>
+
+                    </div>
+
+                    <ul class="nav nav-pills categories">
+                        <li class="active"><%= link_to "Create Post for #{@city.name}", new_city_post_path(@city) %></li>
+                        <li><%= link_to "Back to #{@city.name}", city_path(@city) %></li>
+                    </ul>
+
                     <% @city.posts.each do |post| %>
-                    <p>
-                    <p class="usernamePost">Created by: <strong><%= post.user.username %> </strong></p>
-                    <br>
-                    <p class="posttime"><%= time_ago_in_words(post.created_at) %> Ago</p>
-                    <%= post.text %>
-                    </p>
+                    <div class="card">
+                        <img class="card-img-top" src="<%= post.user.avatar %>" alt="Card image cap">
+                        <div class="card-block">
+                            <h4 class="card-title">Created by:
+                                <strong><%= post.user.username %>
+                                </h4>
+                                <p class="posttime"><%= time_ago_in_words(post.created_at) %>
+                                    Ago</p>
+                                <p class="card-text">
+                                    <%= post.text %>
+                                </p>
+                                <br>
+                            </div>
+                        </div>
+                        <hr>
+                        <% end %>
 
-
-            <hr>
-          <% end %>
-          
-          <%= link_to "create post for this city", new_city_post_path(@city) %>
-          <hr>
-          <%= link_to "city page", city_path(@city) %>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-</div>
