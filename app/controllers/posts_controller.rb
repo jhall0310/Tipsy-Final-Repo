@@ -9,6 +9,12 @@ class PostsController < ApplicationController
 
   end
 
+  def show
+    current_user
+    post_id = params[:id]
+    @post = Post.find_by(id: post_id)
+  end
+
   def new
     @post = Post.new
     city_id = params[:city_id]
@@ -67,7 +73,7 @@ end
 
   private
   def post_params
-   params.require(:post).permit(:text)
+   params.require(:post).permit(:text, :title)
   end
 
 

@@ -58,12 +58,13 @@ p {
 nav.navbar.navbar-default {
   background:none;
   box-shadow:none;
+  background-color: rgb(254,252,210);
 }
 
 .navbar-brand {
   height:75px;
-  font-size:18px;
-  color:#fff !important;
+  font-size:36px;
+  color:#000000 !important;
   text-shadow:1px 1px 1px rgba(0,0,0,0.4);
 }
 
