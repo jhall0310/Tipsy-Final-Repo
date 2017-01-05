@@ -7,18 +7,24 @@
                   <hr>
 
                   <hr>
-                  <% @cities.each do |city| %>
-                    <div>
-                      <h3><%= city.name %></h3>
+                  <div class="card-deck-wrapper">
+                      <div class="card-deck">
+                        <% @cities.each do |city| %>
+                        <div class="card_city">
+                          <img class="card-img-top" src="<%= city.image %>" alt="Card image cap">
+                          <div class="card-block">
+                            <h4 class="card-title"><%= city.name %></h4>
+                            <p class="card-text">Descrtiption: <%= city.description %></p>
+                            <p class="card-text"><small class="text-muted"><%= link_to "City and posts", city_path(city) %></small></p>
+                          </div>
+                        </div>
+                        <% end %>
+                      </div>
                     </div>
-                    <br>
-                    <div>
-                      <h3>Descrtiption: <%= city.description %></h3>
-                    </div>
-                    <br>
-                    <p><%= link_to "City and posts", city_path(city) %></p>
 
-                  <% end %>
+
+
+
 
                 </div>
             </div>
