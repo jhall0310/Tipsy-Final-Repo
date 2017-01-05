@@ -17,6 +17,8 @@
   </div>
   <div class="field">
 
+
+
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -28,6 +30,12 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "off" %>
   </div>
+
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city, class: "form-control" %>
+  </div>
+  <div class="field">
 
   <div class="field">
     <%= f.label :avatar %><br />
