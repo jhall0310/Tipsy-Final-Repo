@@ -31,7 +31,9 @@ html {
    background-image: url(http://i.imgur.com/AQhZ2bb.jpg);
  }
 
-
+#margin-fix {
+  margin: 0;
+}
 
  .nav_image img {
    height:400px;
@@ -39,4 +41,3 @@ html {
    background-repeat: no-repeat;
    background-size:cover;
  }
-
