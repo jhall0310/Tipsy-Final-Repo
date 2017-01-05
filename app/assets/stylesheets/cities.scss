@@ -11,3 +11,21 @@
 .show_header {
   text-align: center;
 }
+
+.card_city {
+  border: 0.5pt solid #bdc3cc;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 5pt;
+  width: 600px;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card_city img {
+  float: right;
+  width: 100px;
+  height: 100px;
+  border-radius: 3pt;
+}
