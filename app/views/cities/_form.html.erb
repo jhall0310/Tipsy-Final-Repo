@@ -1,0 +1,35 @@
+<%= form_for @city do |f| %>
+<div class="field">
+  <%= f.label :lattitude %>
+  <%= f.text_field :lattitude, class: "form-control", placeholder: "lattitude" %>
+</div>
+
+<div class="field">
+  <%= f.label :longitude %>
+  <%= f.text_field :longitude, class: "form-control", placeholder: "longitude" %>
+</div>
+
+<div class="field">
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control", placeholder: "City name" %>
+</div>
+
+<div class="field">
+  <%= f.label :address %>
+  <%= f.text_field :address, class: "form-control", placeholder: "State" %>
+</div>
+
+<div class="field">
+  <%= f.label :description %>
+  <%= f.text_field :description, class: "form-control", placeholder: "description" %>
+</div>
+
+<div class="field">
+  <%= f.label :image %><br />
+  <%= f.file_field :image %>
+</div>
+
+<div class="actions">
+  <%= f.submit "Save City", class: "btn btn-block btn-success" %>
+</div>
+<% end %>

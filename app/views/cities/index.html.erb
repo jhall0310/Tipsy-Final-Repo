@@ -1,0 +1,27 @@
+<div class="city-clean">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="intro">
+                  <h1> Here are the Current Tipsy Cities in the App</h1>
+                  <hr>
+
+                  <hr>
+                  <% @cities.each do |city| %>
+                    <div>
+                      <h3><%= city.name %></h3>
+                    </div>
+                    <br>
+                    <div>
+                      <h3>Descrtiption: <%= city.description %></h3>
+                    </div>
+                    <br>
+                    <p><%= link_to "City and posts", city_path(city) %></p>
+
+                  <% end %>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
