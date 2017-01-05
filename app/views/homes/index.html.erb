@@ -2,56 +2,49 @@
 
 <% if current_user %>
 
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <div class="col-md-12">
-          <%= image_tag current_user.avatar.url(:medium) %>
-        </div>
-        <div class="col-md-12" style="padding-top:20px;">
-          <p>Username: <%= current_user.username %></p>
-        </div>
-        <div class="col-md-12">
-          <p>Joined: <%= current_user.created_at.strftime("%m/%d/%Y") %></p>
-        </div>
-        <div class="col-md-12">
-          <p>Current City:
-          <%= current_user.city %></p>
-        </div>
+  <div class="background">
+    <div class="container">
+      <div class="row border">
         <div class="col-md-4">
-          <button type="button" class="btn btn-primary"><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></button>
-        </div>
-        <div class="col-md-4">
-          <button type="button" class="btn btn-success" ><%= link_to 'Edit Profile', edit_user_registration_path %></button>
-        </div>
-        
-        <hr>
-
-      </div>
-      <div class="col-md-7" style="padding-left:10%">
-        <div class="col-md-12">
-          <p>Posts:</p>
-        </div>
-        <% current_user.posts.each do |post| %>
-          <div class="col-md-12" style="padding-bottom:10px">
-
-            <p>
-              <%= link_to "#{post.title}", user_post_path(current_user, post) %>
-              <br>
-            <p>
-              <strong><%= post.city.name %></strong>
-              <br>
-              <%= post.text %>
-            </p>
+          <div class="col-md-12">
+            <%= image_tag current_user.avatar.url(:medium) %>
           </div>
-        <% end %>
-        <div class="col-md-12">
-          <%= link_to 'Show Cities', cities_index_path %>
+          <div class="col-md-12" style="padding-top:20px;">
+            <p>Username: <%= current_user.username %></p>
+          </div>
+          <div class="col-md-12">
+            <p>Joined: <%= current_user.created_at.strftime("%m/%d/%Y") %></p>
+          </div>
+          <div class="col-md-12">
+            <p>Current City:
+            <%= current_user.username %></p>
+          </div>
+          <div class="col-md-4">
+            <button type="button" class="btn btn-primary"><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></button>
+          </div>
+          <div class="col-md-4">
+            <button type="button" class="btn btn-success"><%= link_to 'Edit Profile', edit_user_registration_path %></button>
+          </div>
+        </div>
+        <div class="col-md-6" style="padding-left:10%">
+          <div class="col-md-12">
+            <h2>Posts:</h2>
+          </div>
+          <% current_user.posts.each do |post| %>
+            <div class="col-md-12" style="padding-bottom:10px">
+              <p>
+                <strong><%= post.city.name %></strong>
+                <br>
+                <%= post.text %>
+              </p>
+            </div>
+          <% end %>
+          <div class="col-md-12">
+            <button type="button" class="btn btn-default"><%= link_to 'Show Cities', cities_index_path %></button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
 
   <% end %>
