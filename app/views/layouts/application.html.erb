@@ -5,38 +5,51 @@
         <%= csrf_meta_tags %>
 
         <%= stylesheet_link_tag    'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css', media: 'all' %>
-    <%= stylesheet_link_tag    'https://fonts.googleapis.com/css?family=Cookie', media: 'all' %>
-    <%= stylesheet_link_tag    'https://fonts.googleapis.com/css?family=Lora', media: 'all' %>
-    <%= stylesheet_link_tag    'https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css', media: 'all' %>
-    <%= stylesheet_link_tag    'https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700', media: 'all' %>
-    <%= stylesheet_link_tag    'https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700', media: 'all' %>
-    <%= stylesheet_link_tag    'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css', media: 'all' %>
-
+        <%= stylesheet_link_tag    'https://fonts.googleapis.com/css?family=Cookie', media: 'all' %>
+        <%= stylesheet_link_tag    'https://fonts.googleapis.com/css?family=Lora', media: 'all' %>
+        <%= stylesheet_link_tag    'https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css', media: 'all' %>
+        <%= stylesheet_link_tag    'https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700', media: 'all' %>
+        <%= stylesheet_link_tag    'https://fonts.googleapis.com/css?family=Roboto+Slab:300,400|Roboto:300,400,700', media: 'all' %>
+        <%= stylesheet_link_tag    'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css', media: 'all' %>
 
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
         <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js' %>
-    <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js' %>
+        <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js' %>
     </head>
 
     <body>
-      <header>
-    <nav class="navbar navbar-default">
-        <div class="container">
-            <div class="navbar-header"><a href="#" class="navbar-brand navbar-link"><i class="icon ion-ios-wineglass"></i><span class="text-title"> Tipsy traveller</span></a>
-                <button data-toggle="collapse" data-target="#navcol-1" class="navbar-toggle collapsed"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-            </div>
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li role="presentation"><%= link_to 'Login', '/users/sign_in' %></li>
-                    <li role="presentation"><%= link_to 'Signup', '/users/sign_up' %></li>
-                    <li role="presentation"><%= link_to 'My Profile', '/homes/index' %></li>
-                    <li role="presentation"><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
-                </ul>
-            </div>
+        <header>
+            <nav class="navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a href="#" class="navbar-brand navbar-link">
+                            <i class="icon ion-ios-wineglass"></i>
+                            <span class="text-title">
+                                Tipsy traveller</span>
+                        </a>
+                        <button data-toggle="collapse" data-target="#navcol-1" class="navbar-toggle collapsed">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navcol-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li role="presentation"><%= link_to 'Login', '/users/sign_in' %></li>
+                            <li role="presentation"><%= link_to 'Signup', '/users/sign_up' %></li>
+                            <li role="presentation"><%= link_to 'My Profile', '/homes/index' %></li>
+                            <li role="presentation"><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+                        </ul>
+                        <hr>
+
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="nav_image">
         </div>
-    </nav>
-</header>
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
         <!-- <h1>Tipsy Traveller</h1> -->
