@@ -3,6 +3,7 @@
     <img class="card-img-top" src= "<%= @post.city.image %>" alt="Card image cap">
         <div class="card-block">
           <h4 class="card-title">City Name: <%= @post.city.name %></h4>
+          <h4 class="card-title">Created By: <%= @post.user.username %></h4>
           <h4 class="card-title">Title: <%= @post.title %></h4>
           <p class="card-text"><b>Content:</b> <%= @post.text %></p>
           <br>
