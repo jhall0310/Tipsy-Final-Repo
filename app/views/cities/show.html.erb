@@ -26,9 +26,10 @@
                     </h2>
 
                     <hr/>
-
-                    <p><%= link_to "Edit This City", edit_city_path(@city) %></p>
-                    <p><%= link_to "show post for this city", city_posts_path(@city) %></p>
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-default"><%= link_to "Edit This City", edit_city_path(@city) %></button>
+                        <button type="button" class="btn btn-default"><%= link_to "show post for this city", city_posts_path(@city) %></button>
+                    </div>
                 </div>
             </div>
         </div>

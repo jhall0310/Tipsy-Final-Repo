@@ -9,7 +9,7 @@
                 <div class="intro">
                   <h1> Here are the Current Tipsy Cities in the App</h1>
                   <hr>
-                  
+
 
                   <hr>
                   <div class="card-deck-wrapper">
@@ -20,7 +20,7 @@
                           <div class="card-block">
                             <h4 class="card-title"><%= city.name %></h4>
                             <p class="card-text">Descrtiption: <%= city.description %></p>
-                            <p class="card-text"><small class="text-muted"><%= link_to "City and posts", city_path(city) %></small></p>
+                            <p class="card-text"><small class="text-muted"><button type="button" class="btn btn-default"><%= link_to "City and posts", city_path(city) %></small></button></p>
                           </div>
                         </div>
                         <% end %>
