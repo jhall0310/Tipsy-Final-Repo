@@ -32,10 +32,11 @@
           </div>
           <% current_user.posts.each do |post| %>
             <div class="col-md-12" style="padding-bottom:10px">
+              <strong><%= link_to "Title: #{post.title}", user_post_path(current_user, post) %></strong>
               <p>
-                <strong><%= post.city.name %></strong>
+                <strong>City: <%= post.city.name %></strong>
                 <br>
-                <%= post.text %>
+                Content: <%= post.text %>
               </p>
             </div>
           <% end %>

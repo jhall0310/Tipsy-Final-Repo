@@ -21,7 +21,7 @@
                         <img class="card-img-top" src="<%= post.user.avatar %>" alt="Card image cap">
                         <div class="card-block">
                             <h4 class="card-title">Title: <%= post.title %></h4>
-                                <strong><%= post.user.username %></strong>
+                                <strong>Created by: <%= post.user.username %></strong>
 
                                 <p class="posttime"><%= time_ago_in_words(post.created_at) %>
                                     Ago</p>
