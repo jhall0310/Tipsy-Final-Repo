@@ -2,9 +2,9 @@
 <div class="card">
     <img class="card-img-top" src= "<%= @post.city.image %>" alt="Card image cap">
         <div class="card-block">
-          <h4 class="card-title"><%= @post.city.name %></h4>
-          <h4 class="card-title"><%= @post.title %></h4>
-          <p class="card-text"><p><%= @post.text %></p></p>
+          <h4 class="card-title">City Name: <%= @post.city.name %></h4>
+          <h4 class="card-title">Title: <%= @post.title %></h4>
+          <p class="card-text"><b>Content:</b> <%= @post.text %></p>
           <br>
           <%= link_to 'Edit Post', edit_user_post_path(current_user, @post) %>
         <p><%= link_to "Delete this post", user_post_path(current_user, @post), data: {confirm: "Are you sure you want to delet this post: #{@post.title}"}, method: :delete %></p>
