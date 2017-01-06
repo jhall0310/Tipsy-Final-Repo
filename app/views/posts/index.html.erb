@@ -12,12 +12,12 @@
                     </div>
 
                     <ul class="nav nav-pills categories">
-                        <li class="active"><%= link_to "Create Post for #{@city.name}", new_city_post_path(@city) %></li>
-                        <li><%= link_to "Back to #{@city.name}", city_path(@city) %></li>
+                        <li class="active"><button type="button" class="btn btn-default"><%= link_to "Create Post for #{@city.name}", new_city_post_path(@city) %></button></li>
+                        <li><button type="button" class="btn btn-success"><%= link_to "Back to #{@city.name}", city_path(@city) %></button></li>
                     </ul>
 
                     <% @city.posts.each do |post| %>
-                    <div class="card">
+                    <div class="card borders">
                         <img class="card-img-top" src="<%= post.user.avatar %>" alt="Card image cap">
                         <div class="card-block">
                             <h4 class="card-title">Title: <%= post.title %></h4>

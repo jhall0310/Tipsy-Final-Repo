@@ -1,16 +1,20 @@
-.background {
-  padding: 50px 0;
-  background: url("eczsmo-tnuc-chery-lee.jpg") no-repeat center center fixed;-webkit-background-size: cover;
+body {
+  background: url("eczsmo-tnuc-chery-lee.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  heigh: 1000px;
 }
 
 .border {
   background-color: rgba(255, 255, 255, .5);
   border-radius: 25px;
-  padding: 50px 0 50px 10%;
+  padding: 50px 0 50px 0;
+}
+
+.borders {
+  background-color: rgba(255, 255, 255, .5);
+  border-radius: 25px;
 }
 
 p {
