@@ -16,7 +16,7 @@
                         <li><button type="button" class="btn btn-success"><%= link_to "Back to #{@city.name}", city_path(@city) %></button></li>
                     </ul>
 
-                    <% @city.posts.each do |post| %>
+                    <% @city.posts.reverse_each do |post| %>
                     <div class="card borders">
                         <img class="card-img-top" src="<%= post.user.avatar %>" alt="Card image cap">
                         <div class="card-block">
