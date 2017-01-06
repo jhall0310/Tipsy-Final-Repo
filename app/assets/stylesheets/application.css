@@ -41,3 +41,7 @@ html {
    background-repeat: no-repeat;
    background-size:cover;
  }
+
+.alert-warning {
+  text-align: center;
+}

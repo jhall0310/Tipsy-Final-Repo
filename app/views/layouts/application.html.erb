@@ -57,6 +57,15 @@
           <ul class="nav nav-pills categories">
               <li class="active"><%= link_to "View Cities", cities_path %></li>
           </ul>
+
+          <%- flash.each do |name, msg| -%>
+          <div class="alert alert-warning">
+            <strong><%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %></strong>
+          </div>
+          <%- end -%>
+
+
+
         <!-- <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p> -->
         <!-- <h1>Tipsy Traveller</h1> -->
